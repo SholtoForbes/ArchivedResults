@@ -71,13 +71,17 @@ hlt = text(...
 subplot(2,6,[7,9])
 hold on
 ax2 = gca;
-plot(t1, v1/10^3, 'Color','k', 'LineStyle', '-')
-plot(t2, v2/10^3, 'Color','k', 'LineStyle', '-.')
 
-plot(t1, q1/10^4, 'Color','k', 'LineStyle', '--')
-plot(t2, q2/10^4, 'Color','k', 'LineStyle', ':', 'LineWidth', 1.5)
+plot(t1, v1/10^3, 'Color','k', 'LineStyle', '--', 'LineWidth', 1.2)
+plot(t2, v2/10^3, 'Color','k', 'LineStyle', '-', 'LineWidth', 1.2)
 
-h = legend(ax2,  '45kPa Velocity (m/s x 10^3)', '55kPa Velocity (m/s x 10^3)', '45kPa Dynamic Pressure (kPa x 10^4)', '55kPa Dynamic Pressure (kPa x 10^4)');
+plot(t1, q1/10^4, 'Color','k', 'LineStyle', '-')
+plot(t2, q2/10^4, 'Color','k', 'LineStyle', '-.')
+
+plot(t1, rad2deg(theta1), 'Color','k', 'LineStyle', '--')
+plot(t2, rad2deg(theta2), 'Color','k', 'LineStyle', ':', 'LineWidth', 1.5)
+
+h = legend(ax2,  '45kPa Velocity (m/s x 10^3)', '55kPa Velocity (m/s x 10^3)', '45kPa Dynamic Pressure (kPa x 10^4)', '55kPa Dynamic Pressure (kPa x 10^4)', '45kPa Trajectory Angle (deg)', '55kPa Trajectory Angle (deg)');
 
 
 subplot(2,6,[10,12])
